@@ -5,7 +5,7 @@ export const NewsBoard = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(()=>{
-    let url = ` https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=2cf2797ff5eb45aea1753abbaec268b3`;
+    let url = ` https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${import.meta.env.VITE_API_KEY}`;
     fetch(url)
     .then(response=> response.json())
     .then(data=> setArticles(data.articles));
